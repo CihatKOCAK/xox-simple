@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Body from "./components/body";
+import Header from "./components/header";
 
 function App() {
+  const [xoxContainer, setXoxContainer] = useState([
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+  ]);
+  const [turn, setTurn] = useState(1); //tekse x çiftse y
+  const [winner, setWinner] = useState(0); //0 yok 1 x kazanır 2 y kazanır
+  const [gameOver, setGameOver] = useState(false); //oyun bitmedi mi?
+
+  const [score, setScore] = useState({ player1: 0, player2: 0 }); //oyuncuların puanları
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Body xoxContainer={xoxContainer}  />
     </div>
   );
 }
