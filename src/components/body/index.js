@@ -1,18 +1,11 @@
 import { React, useState } from "react";
-import {
-  myClickableStyle,
-  myUnclickableStyle,
-  myClickableHoverStyle,
-} from "./style";
+import { myClickableStyle, myUnclickableStyle } from "./style";
 export default function Body(props) {
   const { xoxContainer, setXoxContainer, turn, setTurn } = props;
 
   const onClickable = (clickedZone) => {
     return clickedZone === 0 ? true : false;
   };
-
-  const [columnClickableStyle, setColumnClickableStyle] =
-    useState(myClickableStyle);
 
   function pressXO(row, colm) {
     if (turn % 2 === 0) {
@@ -39,15 +32,17 @@ export default function Body(props) {
                   <div
                     style={
                       onClickable(row[i])
-                        ? columnClickableStyle
+                        ? myClickableStyle
                         : myUnclickableStyle
                     }
-                    // onMouseOver={() =>
-                    //   setColumnClickableStyle(myClickableHoverStyle)
-                    // }
-                    // onMouseLeave={() =>
-                    //   setColumnClickableStyle(myClickableStyle)
-                    // }
+                    onMouseOver={(e) => {
+                      if (onClickable(row[i]))
+                        e.target.style.background = "#DEEDCF";
+                    }}
+                    onMouseLeave={(e) => {
+                      if (onClickable(row[i]))
+                        e.target.style.background = "#99D492";
+                    }}
                     className={"column column-" + (i + 1)}
                     key={"c " + i}
                     onClick={() => onClickable(row[i]) && pressXO(index, i)}

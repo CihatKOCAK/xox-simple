@@ -8,7 +8,3 @@ export const myUnclickableStyle = {
   backgroundColor: "#BFE1B0",
 };
 
-export const myClickableHoverStyle = {
-  cursor: "pointer",
-  backgroundColor: "#DEEDCF",
-};
