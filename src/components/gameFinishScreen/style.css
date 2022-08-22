@@ -1,0 +1,15 @@
+.finish {
+  width: 500px;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(197, 81, 81);
+    
+  background-color: antiquewhite;
+  position: absolute;
+  top: calc(50% - 350px);
+  left: calc(50% - 250px);
+}
