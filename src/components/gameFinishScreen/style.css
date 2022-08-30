@@ -1,15 +1,71 @@
 .finish {
-  width: 500px;
-  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
 
+.finish > .newGame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.finish > .winner {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(197, 81, 81);
-    
-  background-color: antiquewhite;
-  position: absolute;
-  top: calc(50% - 350px);
-  left: calc(50% - 250px);
+  border-radius: 5px;
+  background-color: rgb(197, 81, 81);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: default;
+  margin-top: 20px;
+}
+
+.finish > .resetGame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.finish > .exitGame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
 }

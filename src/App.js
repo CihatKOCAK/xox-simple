@@ -14,7 +14,7 @@ function App() {
   const [turn, setTurn] = useState(1); //tekse x çiftse y
   const [gameOver, setGameOver] = useState(false); //oyun bitmedi mi?
   const [score, setScore] = useState({ player1: 0, player2: 0 }); //oyuncuların puanları
-console.log(turn)
+  const [winner, setWinner] = useState("");
   function newGame() {
     setXoxContainer([
       [0, 0, 0],
@@ -22,20 +22,42 @@ console.log(turn)
       [0, 0, 0],
     ]);
     setTurn(1);
+    setWinner("");
   }
+  function resetGame() {
+    setScore({ player1: 0, player2: 0 });
+    newGame();
+  }
+
   useEffect(() => {
     turn === 10 ? setGameOver(true) : setGameOver(false);
-  }, [turn]);
+    if (winner === "X" || winner === "O") {
+      if (winner === "X") {
+        setScore({ player1: score.player1 + 1, player2: score.player2 });
+      } else if (winner === "O") {
+        setScore({ player1: score.player1, player2: score.player2 + 1 });
+      }
+      setGameOver(true);
+    }
+  }, [turn, winner]);
 
   return (
     <div className="App">
-      {gameOver && <GameFinish newGame={newGame} />}
+      {gameOver && (
+        <GameFinish
+          newGame={newGame}
+          winner={winner}
+          score={score}
+          resetGame={resetGame}
+        />
+      )}
       <Header score={score} />
       <Body
         xoxContainer={xoxContainer}
         setXoxContainer={setXoxContainer}
         turn={turn}
         setTurn={setTurn}
+        setWinner={setWinner}
       />
       <Footer gameOver={gameOver} />
     </div>

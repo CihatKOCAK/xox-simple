@@ -1,8 +1,8 @@
-import { React } from "react";
-import "./style.css"
+import { React, useEffect } from "react";
+import "./style.css";
 import { myClickableStyle, myUnclickableStyle } from "./style";
 export default function Body(props) {
-  const { xoxContainer, setXoxContainer, turn, setTurn } = props;
+  const { xoxContainer, setXoxContainer, turn, setTurn, setWinner } = props;
 
   const onClickable = (clickedZone) => {
     return clickedZone === 0 ? true : false;
@@ -21,6 +21,76 @@ export default function Body(props) {
       setTurn(turn + 1);
     }
   }
+  //winner controller
+  function winnerController(xoxContainer) {
+    let winner = 0;
+    if (
+      (xoxContainer[0][0] === 1 &&
+        xoxContainer[0][1] === 1 &&
+        xoxContainer[0][2] === 1) ||
+      (xoxContainer[1][0] === 1 &&
+        xoxContainer[1][1] === 1 &&
+        xoxContainer[1][2] === 1) ||
+      (xoxContainer[2][0] === 1 &&
+        xoxContainer[2][1] === 1 &&
+        xoxContainer[2][2] === 1) ||
+      (xoxContainer[0][0] === 1 &&
+        xoxContainer[1][0] === 1 &&
+        xoxContainer[2][0] === 1) ||
+      (xoxContainer[0][1] === 1 &&
+        xoxContainer[1][1] === 1 &&
+        xoxContainer[2][1] === 1) ||
+      (xoxContainer[0][2] === 1 &&
+        xoxContainer[1][2] === 1 &&
+        xoxContainer[2][2] === 1) ||
+      (xoxContainer[0][0] === 1 &&
+        xoxContainer[1][1] === 1 &&
+        xoxContainer[2][2] === 1) ||
+      (xoxContainer[0][2] === 1 &&
+        xoxContainer[1][1] === 1 &&
+        xoxContainer[2][0] === 1)
+    ) {
+      winner = 1;
+    } else if (
+      (xoxContainer[0][0] === 2 &&
+        xoxContainer[0][1] === 2 &&
+        xoxContainer[0][2] === 2) ||
+      (xoxContainer[1][0] === 2 &&
+        xoxContainer[1][1] === 2 &&
+        xoxContainer[1][2] === 2) ||
+      (xoxContainer[2][0] === 2 &&
+        xoxContainer[2][1] === 2 &&
+        xoxContainer[2][2] === 2) ||
+      (xoxContainer[0][0] === 2 &&
+        xoxContainer[1][0] === 2 &&
+        xoxContainer[2][0] === 2) ||
+      (xoxContainer[0][1] === 2 &&
+        xoxContainer[1][1] === 2 &&
+        xoxContainer[2][1] === 2) ||
+      (xoxContainer[0][2] === 2 &&
+        xoxContainer[1][2] === 2 &&
+        xoxContainer[2][2] === 2) ||
+      (xoxContainer[0][0] === 2 &&
+        xoxContainer[1][1] === 2 &&
+        xoxContainer[2][2] === 2) ||
+      (xoxContainer[0][2] === 2 &&
+        xoxContainer[1][1] === 2 &&
+        xoxContainer[2][0] === 2)
+    ) {
+      winner = 2;
+    } else {
+      winner = 0;
+    }
+    return winner;
+  }
+
+  useEffect(() => {
+    if (winnerController(xoxContainer) === 2) {
+      setWinner("O");
+    } else if (winnerController(xoxContainer) === 1) {
+      setWinner("X");
+    }
+  });
 
   return (
     <div className="mainContainer">
