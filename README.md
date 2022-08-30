@@ -28,6 +28,6 @@ or Yarn
 
 ## Some Screenshots
 
-![Screen Shot](readME/mainSc.PNG)
-![Screen Shot](readME/draw.PNG)
-![Screen Shot](readME/xWim.PNG)
+![Screen Shot](readMe/mainSc.PNG)
+![Screen Shot](readMe/draw.PNG)
+![Screen Shot](readMe/xWim.PNG)
