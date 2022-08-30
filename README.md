@@ -30,4 +30,4 @@ or Yarn
 
 ![Screen Shot](readMe/mainSc.PNG)
 ![Screen Shot](readMe/draw.PNG)
-![Screen Shot](readMe/xWim.PNG)
+![Screen Shot](readMe/xWin.PNG)
