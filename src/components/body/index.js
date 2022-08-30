@@ -1,4 +1,5 @@
-import { React, useState } from "react";
+import { React } from "react";
+import "./style.css"
 import { myClickableStyle, myUnclickableStyle } from "./style";
 export default function Body(props) {
   const { xoxContainer, setXoxContainer, turn, setTurn } = props;
@@ -47,7 +48,13 @@ export default function Body(props) {
                     key={"c " + i}
                     onClick={() => onClickable(row[i]) && pressXO(index, i)}
                   >
-                    {column === 1 ? "X" : column === 2 ? "O" : ""}
+                    {column === 1 ? (
+                      <p className="x">X</p>
+                    ) : column === 2 ? (
+                      <p className="o">O</p>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 );
               })}

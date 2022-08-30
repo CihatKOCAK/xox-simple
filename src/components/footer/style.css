@@ -1,0 +1,23 @@
+.footerContainer {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+.footerContainer .stopwatch {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.footerContainer .stopwatch .min {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.footerContainer .stopwatch .sec {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
