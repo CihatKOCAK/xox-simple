@@ -56,6 +56,14 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.finish > .resetGame :hover,
+.finish > .exitGame :hover,
+.finish > .newGame :hover {
+  color: rgb(197, 81, 81);
+}
+
+
 .finish > .exitGame {
   display: flex;
   justify-content: center;
