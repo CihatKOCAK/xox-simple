@@ -6,13 +6,13 @@ a simple xox game
 
 Clone the project
 
-```bash
+```
   git clone https://github.com/CihatKOCAK/xox-simple.git
 ```
 
 Go to client directory and run
 
-    ```bash
+    ```
     cd xox-simple/client
     npm install
     npm start
@@ -20,7 +20,7 @@ Go to client directory and run
 
 or Yarn
 
-    ```bash
+    ```
     cd xox-simple/client
     yarn install
     yarn start
